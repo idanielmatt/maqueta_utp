@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    min-height: 100%;
+    font-family: "Helvetica Neue", sans-serif;
+    
+    background-image: url(../img/fachada_utp_4.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-weight: bold;
+}
+
+p {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: normal;
+}
+
+.header{
+    grid-area: header;
+}
+
+.nav{
+    grid-area: navbar;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.main{
+    grid-area: main;
+}
+
+.footer{
+    grid-area: footer;
+}
+
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.507);
+    color: white;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 300px;
+    width: 300px;
+    background-color: rgba(246, 248, 250, 0.726);
+    backdrop-filter: blur(2px);
+    border-radius: 5px;
+    border: 1px solid #f6f8fa;
+    color: white;
+}
+
+.form > h2{
+    margin-top: 15px;
+    color: #8e9499;
+}
+
+.form-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.form-item > input{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid  #8a8f94;
+    outline: none;
+}
+
+.form-item > input:focus{
+    /* border-width: 1px;
+    border-style: solid; */
+    border-color: #0969da;
+}
+
+input[type="text"], input[type="password"]{
+    text-align: center;
+}
+
+input[type="text"]{
+    margin-bottom: -35px;
+}
+
+input[type="submit"]{
+    margin-top: -50px;
+    background-color: rgb(59, 180, 59);
+    color: white;
+}
+
+input[type="submit"]:hover{
+    cursor: pointer;
+}
+
+main > *{text-align: center;}
+.form-bottom{
+    padding: 0 30px 0 30px;
+    color: white;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container{
+    display: grid;
+    gap: 10px;
+    grid-template: 
+    "header" 150px
+    "navbar" 10px
+    "main"   auto
+    "sidebar"50px
+    "footer" auto;
+}
+
+@media(min-width: 600px){
+    .grid-container{
+        grid-template: 
+        "header header header" 200px /* alto */
+        "navbar navbar header" 50px
+        "sidebar main sidebar" auto
+        "footer footer footer" 100px /
+         200px  auto   200px;
+    }
+}
+
+@media(min-width: 900px){
+    .grid-container{
+        grid-template: 
+            "header header header" 150px
+            "navbar main   sidebar"auto
+            "footer footer footer" 100px /
+            200px   auto   200px
+        ;
+    }
+    form{
+        margin-top: 50px;
+    }
+}
